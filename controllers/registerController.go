@@ -34,6 +34,7 @@ func (r *RegisterController)Post() {
 	}
 	row, err := db_mysql.AddUser(user)
 	if err != nil {
+		fmt.Println(err.Error())
 		r.Ctx.WriteString("注册用户信息失败，请重试")
 		//result:=models.Result{
 			//Code:0,
